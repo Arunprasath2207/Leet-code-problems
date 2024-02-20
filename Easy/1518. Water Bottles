@@ -1,0 +1,16 @@
+class Solution {
+    public int numWaterBottles(int numBottle, int numExchang) 
+    {
+      int TotalDrink = numBottle;
+      int remainder = 0;
+      int ExchangeBottle = 0;
+      while(numBottle>=numExchang)
+      {
+          ExchangeBottle = numBottle/numExchang;
+          remainder = numBottle%numExchang;
+          TotalDrink += ExchangeBottle;
+          numBottle = remainder + ExchangeBottle;
+      }
+      return TotalDrink;
+    }
+}
